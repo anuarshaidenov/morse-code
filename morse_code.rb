@@ -1,4 +1,4 @@
-  morse = { '.-' => 'a',
+MORSE = { '.-' => 'a',
 '-...' => 'b',
 '-.-.' => 'c',
 '-..' => 'd',
@@ -23,7 +23,7 @@
 '.--' => 'w',
 '-..-' => 'x',
 '-.--' => 'y',
-'--..' => 'z' 
+'--..' => 'z', 
 '.----' => '1',
 '..---' => '2',
 '...--' => '3',
@@ -35,3 +35,18 @@
 '----.' => '9',
 '-----' => '0',
 }
+
+def decode_char(code)
+  return MORSE[code]
+end
+
+puts(decode_char('-...'))
+
+def decode_word(code)
+  morse_characters = code.split(' ')
+  decoded_characters = []
+  morse_characters.each { |char| decoded_characters.push(decode_char(char)) }
+  return decoded_characters.join('')
+end
+
+puts (decode_word('-- -.--'))
