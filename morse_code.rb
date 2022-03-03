@@ -50,10 +50,11 @@ def decode_word(code)
 end
 
 puts (decode_word('-- -.--'))
- def decode_msg(code)
-    message = code.split("  ")
-    decoded_msg =[]
-    message.each{|char| decoded_msg.push(decode_word(char))}
-    return decoded_msg.join(' ')
- end
- puts (decode_msg("-- -.--   -. .- -- ."))
+
+def decode_msg(code)
+  message = code.split("  ")
+  decoded_msg =[]
+  message.each{|char| decoded_msg.push(decode_word(char))}
+  return decoded_msg.join(' ')
+end
+puts (decode_msg("-- -.--   -. .- -- ."))
